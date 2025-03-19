@@ -123,6 +123,19 @@ namespace
             Unit::DateLT
             );
 
+      addNumericFieldWithExtractor(
+            "at_date",
+            "The last billing period date.",
+            DEFAULT_PRINT_PROPERTIES,
+            Quantity::PointInTime,
+            VifScaling::Auto, DifSignedness::Signed,
+            FieldMatcher::build()
+            .set(MeasurementType::Instantaneous)
+            .set(VIFRange::Date)
+            .set(StorageNr(1)),
+            Unit::DateLT
+            );
+
         addNumericFieldWithExtractor(
             "target",
             "The total water consumption recorded at the end of last month.",
