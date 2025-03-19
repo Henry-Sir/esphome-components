@@ -157,6 +157,17 @@ namespace
             .set(MeasurementType::Instantaneous)
             .set(VIFRange::RemainingBattery),
             Unit::Year);
+
+     addNumericFieldWithExtractor(
+            "flow_temperature",
+            "The flow temperature.",
+            DEFAULT_PRINT_PROPERTIES,
+            Quantity::Temperature,
+            VifScaling::Auto, DifSignedness::Signed,
+            FieldMatcher::build()
+            .set(MeasurementType::Instantaneous)
+            .set(VIFRange::FlowTemperature)
+            );
     }
 }
 
